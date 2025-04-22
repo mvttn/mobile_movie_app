@@ -14,7 +14,7 @@ export default function Index() {
   const {
     data: movies,
     loading: moviesLoading,
-    error: moviesErrors,
+    error: moviesError,
   } = useFetch(() => fetchMovies({ query: "" }));
 
   return (
@@ -24,8 +24,8 @@ export default function Index() {
         <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
         {moviesLoading ? (
           <ActivityIndicator size="large" color="#000ff" className="mt-10 self-center" />
-        ) : moviesErrors ? (
-          <Text>Error: {moviesErrors?.message}</Text>
+        ) : moviesError ? (
+          <Text>Error: {moviesError?.message}</Text>
         ) : (
           <View className="flex-1 mt-5">
             <SearchBar onPress={() => router.push("/search")} placeholder="Search for a movie" />
