@@ -52,6 +52,7 @@ export default function Index() {
                 renderItem={({ item, index }) => <TrendingCard movie={item} index={index} />}
                 keyExtractor={(item) => item.movie_id.toString()}
               />
+              
               <Text className="text-lg text-white font-bold mt-5 mb-3">Latest Movies</Text>
               <FlatList
                 data={movies}
